@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>example</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				list-style:none;
+			}
+			a{
+				text-decoration:none;
+				color:inherit;
+			}
+			span{
+				display: inline;
+				width: 500px;
+			}
+			.list1{
+				background-color: #1D2225;
+
+			}
+			.line{
+				width: 540px;
+				height: 45px;
+				border-top: 1px inset #2D353A;
+				border-bottom: 1px inset #2D353A;
+				color: white;
+				font-size: 18px;
+				font-family: Microsoft YaHei;
+				padding-left: 80px;
+				padding-top: 18px;
+				overflow: hidden; /*自动隐藏文字*/
+				text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+				white-space: nowrap;/*强制不换行*/
+				width: 20em;/*不允许出现半汉字截断*/
+			}
+			.word{
+				position: relative;
+				top: -5px;
+			}
+			.header{
+				position: fixed;
+				top: 0px;
+				background-color: #1A1A1A;
+				width: 380px;
+				height: 30px;
+
+			}
+			.footer{	
+				position: fixed;
+				bottom: 0px;
+				border:1px inset red;
+				height:60px;
+				width: 560px;
+				color:white;
+				background-color: #1A1A1A;
+				font-size: 16px;
+				font-family: Microsoft YaHei;
+			}
+			input{
+		        width: 500px;
+		        border: 1px solid #e2e2e2;
+		        height: 30px;
+		        float: left;
+		        background-image: url(3.png);
+		        background-repeat: no-repeat;
+		        background-size: 25px;
+		        background-position:5px center;
+		        background-color: #1A1A1A;
+		        padding:0 0 0 40px;
+		        color: white;
+		    }
+		    .line:hover{
+				background-color: #326C8D;
+			}
+		    
+
+	</style>
+</head>
+<body>
+
+<div id="left">
+	<div id="itany">
+		<div class="header">
+		    <input type="text" name="search" placeholder="Search">
+		</div>
+		<div></div>
+		<div></div>
+		<ul class="list1">
+			    
+		        <li v-for="list in entries" class="line">    
+		      			
+		      			<img src="1.jpg">
+		                <span v-for="(val,key,i) in list.request" v-if="i==0" class="word">{{val}}</span>
+		                <span v-for="(val,key,i) in list.request" v-if="i==1" class="word">{{val}}</span>
+
+		        </li>
+		   
+		</ul>
+		<div class="footer">
+			<span>Export</span>
+			<span>Import</span>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+	<script type="text/javascript" src="something.js"></script>
+</body>
+</html>
